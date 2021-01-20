@@ -1,0 +1,19 @@
+{
+  "name": "workday-js",
+  "version": "0.1.0",
+  "description": "to do",
+  "main": "index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "test",
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "author": "Riku-1",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.1.3"
+  }
+}
