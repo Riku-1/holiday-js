@@ -33,5 +33,10 @@ export class HolidayList {
   constructor(
     public dayOffList: Date[] = [],
     public weeklyHoliday: Day[] = [Day.Sat, Day.Sun]
-  ) {}
+  ) {
+    this.dayOffList.forEach((date) => {
+      // unify time to easy to compare
+      date.setHours(0, 0, 0, 0);
+    });
+  }
 }
