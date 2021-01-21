@@ -1,6 +1,6 @@
 import { Day } from './Day';
 
-class WDate {
+export class WDate {
   constructor(private date: Date, private holidayList: HolidayList) {}
   /**
    * return whether the date is a day off or not
@@ -8,9 +8,9 @@ class WDate {
    * @param date
    * @returns
    */
-  isDayOff(date: Date) {
+  isDayOff() {
     return this.holidayList.weeklyHoliday.some(
-      (value) => date.getDay() === value
+      (value) => this.date.getDay() === value
     );
   }
 
@@ -19,9 +19,9 @@ class WDate {
   // 稼働日でx日かかると何日になるか
 }
 
-class HolidayList {
+export class HolidayList {
   constructor(
-    dayOffList: Date[],
+    dayOffList: Date[] = [],
     public weeklyHoliday: Day[] = [Day.Sat, Day.Sun]
   ) {}
 }
