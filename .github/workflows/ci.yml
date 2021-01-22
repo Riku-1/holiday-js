@@ -26,3 +26,9 @@ jobs:
 
       - name: Run test
         run: npm run test
+
+      - name: Send coverage
+        uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          directory: coverage
