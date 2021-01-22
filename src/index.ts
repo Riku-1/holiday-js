@@ -7,20 +7,20 @@ export class WDate {
   }
 
   /**
-   * return whether the date is a day off or not
+   * return whether the date is a work day or not
    * @param date
    * @returns
    */
-  isDayOff() {
+  isWorkDay() {
     const isWeeklyHoliday = this.holidayList.weeklyHoliday.some(
       (value) => this.date.getDay() === value
     );
     if (isWeeklyHoliday) {
-      return true;
+      return false;
     }
 
-    return this.holidayList.dayOffList.some(
-      (value) => this.date.getTime() === this.date.getTime()
+    return !this.holidayList.dayOffList.some(
+      (value) => this.date.getTime() === value.getTime()
     );
   }
 
