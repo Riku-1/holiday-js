@@ -2,7 +2,7 @@ import { WDate } from '../src';
 import { Day } from '../src/Day';
 import { HolidayList } from '../src/index';
 
-describe('isDayOff', () => {
+describe('isWorkDay', () => {
   test('when day is not weekly holiday and not in dayOffList, returen false', () => {
     const date = new WDate(new Date('January 4, 2021'), new HolidayList());
     expect(date.isWorkDay()).toBeTruthy();
